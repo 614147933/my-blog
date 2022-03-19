@@ -1,8 +1,9 @@
 import { onMounted, onUnmounted, ref } from "vue";
 
-function useWindowResize() {
+export function useWindowResize() {
     const width = ref(0);
     const height = ref(0);
+
 
     function onResize() {
         width.value = window.innerWidth;
@@ -23,5 +24,13 @@ function useWindowResize() {
         height
     };
 }
-
-export default useWindowResize;
+export function useWindowScroll() {
+    const scrollTop = ref(0);
+    // 通用逻辑: 基于scroll事件得到当前距离顶部的滚动距离 然后返回
+    window.addEventListener('scroll', () => {
+        scrollTop.value = document.documentElement.scrollTop
+    })
+    return {
+        scrollTop
+    };
+}

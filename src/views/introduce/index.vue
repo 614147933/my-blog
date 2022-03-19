@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue'
-import useWindowResize from "../../utils/hooks/useWindowResize";
+import { useWindowResize } from "../../utils/hooks/useWindowResize";
 export default defineComponent({
     setup() {
         // 屏幕高度，宽度hook
