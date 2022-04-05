@@ -21,6 +21,18 @@ const routes: Array<RouteRecordRaw> = [
         name: 'introduce',
       },
     ]
+  },
+  {
+    path: '/draggable',
+    component: Layout,
+    redirect: 'draggable',
+    children: [
+      {
+        path: '/draggable',
+        component: () => import('@/views/draggable/index.vue'),
+        name: 'draggable',
+      },
+    ]
   }
 ]
 
